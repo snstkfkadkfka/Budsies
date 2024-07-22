@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+*{margin: 0;padding: 0;box-sizing: border-box;}
+ul,li,ol{list-style: none;}
+a{color: inherit;text-decoration: none;}
+img{vertical-align: top; max-width: 100%;}
+button{cursor: pointer;}
+body{background: #fff;color: #333;font-family: "Noto Sans KR", sans-serif;}
+:root{--OG:#FCB247;--RG:#A8D267;--HP:#ED3095;--SB:#44C8F1;--GR:#1EAF63;--PP:#BA80B8;--YW:#F7ED62;}
+/* ----------------------------------------------초기화 */
+
+
+#all{position: relative;z-index: 10;}
+header{height: 130px;position: relative;}
+#wrap{width: 1360px;margin: 0 auto;position: relative;}
+header .logo{width: 229px;height: 173px;padding: 34px 6px;display: flex;}
+header .topGnb ul{position: absolute;top: 15px;display: flex;align-items:center;right: 0;width: 158px;justify-content: space-between;}
+header .topGnb ul li:nth-child(2){padding-top: 5px;}
+.topGnb #leg{border: none;height: 24px;}
+.topGnb #leg option{border: none;box-shadow: none;}
+header .navBG{width: 100%;height: 43px;background: var(--OG);position: absolute;bottom: 0;left: 0;}
+header nav{position: absolute;top: 94px;left: 50%;transform: translate(-50%, 0);z-index: 5;}
+header nav>ul{display: flex;width: 702px;justify-content: space-evenly;}
+header nav>ul>li>a{font-size: 23px;font-family: "Jua", sans-serif;display: block;}
+header nav>ul>li>a:focus,
+header nav>ul>li.on>a,
+header nav>ul>li:hover>a{color: var(--HP);}
+header nav>ul>li::after{content: "";display: block;width: 0%;height: 4px;background: var(--HP);border-radius: 22px;margin: 3px auto;transition: 0.3s;}
+header nav>ul>li:hover::after{width: 100%;}
+.sub {display: flex;position: absolute;top: 36px;}
+nav>ul>li:nth-child(1) .sub li{padding: 7px 34px;}
+nav>ul>li:nth-child(1) .sub {position: absolute;left:34px;}
+nav>ul>li:nth-child(2) .sub li{padding: 7px 34px 11px 15px;}
+nav>ul>li:nth-child(2) .sub{position: absolute;left:210px;}
+nav>ul>li:nth-child(3) .sub {position: absolute;left: 340px;}
+nav>ul>li:nth-child(3) .sub li{padding:7px 34px 11px 0px;}
+nav>ul>li:nth-child(4) .sub {position: absolute;right: 5px;}
+nav>ul>li:nth-child(4) .sub li{padding:7px 34px 11px 0px;}
+nav>ul>li:nth-child(5) .sub{position: absolute;right: 10px;}
+nav>ul>li:nth-child(5) .sub li{padding: 7px 34px 11px 0px;width: 130px;}
+
+.sub li a{text-align: center;font-size: 20px;display: block; 
+font-weight:400;
+ 
+ }
+.sub li a:focus,
+.sub li a:hover{color: var(--HP);transition: 0.1s;font-weight: bolder;}
+
+/* ----------------------------------------------------------------헤더 끝 */
+
+.banner{height: 694px;mask-image: linear-gradient(to top , rgba(0, 0, 0, 1)78%, rgba(0, 0, 0, 0.7)85%, rgba(0, 0, 0, 0)100%);position: relative;}
+.banner img{width: 100%;height: 100%;object-fit: cover;}
+.banner h2{position: absolute;color: #fff;font-weight: bold;font-size: 49px;text-shadow: 3px 3px 5px rgba(0,0,0,0.25);left: 50%;top: 50%;transform: translate(-50%, -50%);width: 1016px;}
+
+/* --------------------------------배너 끝 */
+
+.tab{height: 785px;position: relative;}
+.tab .con>ul li.title ul{display: flex;width: 644px;justify-content: space-between;margin: 0 auto;padding-top: 119px;}
+.tab .con>ul li.title h3{font-family: "Jua", sans-serif;font-weight:590;height: 23px;font-size: 23px;transition: 0.1s;}
+.tab .con>ul li.title h3:hover{color: var(--HP);}
+.tab .con>ul li.title a{color: #333;}
+.tab .con>ul li.title a.on{color: var(--HP);}
+.tab .con .box>ul>li .img{display: flex;gap: 18px;padding-top: 48px;}
+.tab .con .box .img img{transition: 0.2s;}
+
+
+.tab .con .box .img>li>a{position: absolute;top:50%;left: 50%;transform: translate(-50%, -50%);display: none;}
+
+.tab .con #A .img img{width: 100%;height: 100%;object-fit: cover;}
+.tab .con #A{width: 100%;height: 100%;object-fit: cover;}
+
+.tab .con .box>ul>li .img li{flex: 1;width: 440px;height: 280px;overflow: hidden;border-radius: 10px;position: relative;}
+.tab .con .box{position: relative;}
+
+.tab .con .box .detail{margin-top: 50px;}
+.tab .con .box .detail p{display: inline-block;font-size: 25px;padding-top: 10px;font-weight: 450;}
+.tab .con .box>ul>li{position: absolute;}
+
+/*--------------------------------탭 끝  */
+
+.video{height: 1048px;background: var(--OG);position: relative;}
+.video h2{font-family: "Jua", sans-serif;font-size: 60px;color: #fff;font-weight: normal;text-align: center;padding-top: 70px;}
+.video iframe{width: 1355px;height: 762px;position: absolute;left: 50%;transform: translateX(-50%);border-radius: 7px;top: 184px;}
+
+/* ------------------------------비디오 끝 */
+.upgrade{height: 1130px;}
+.upgrade h2{text-align: center;font-family: "Jua", sans-serif;font-weight: normal;font-size: 60px;color: var(--PP);margin-top: 34px;height: 60px;}
+
+.upgrade .design{margin-top: 50px;position: relative;}
+.upgrade>h2 span{font-size: 40px;}
+.upgrade>div>ul{display: flex;}
+.upgrade>div>ul>li.text p,div.check{padding-left: 100px;}
+.upgrade>div>ul>li.text>p{font-size: 26px;letter-spacing: -1px;font-weight: 500;line-height: 30px;}
+.upgrade .design li.text>p{position: absolute;top: 115px;line-height: 32px;}
+.upgrade .design li.text>p>span{font-size: 20px;letter-spacing: -1px;font-weight: initial;color: #5A5A5A;position: absolute;top: 179px}
+.upgrade .check{position: absolute;top: 385px;}
+.upgrade .check span{font-size: 20px;font-weight: initial;color: rgba(0,0,0,0.7);letter-spacing:1px;position: absolute;width: 690px;left: 138px;bottom: 0;}
+
+.upgrade .design .picture{position: absolute;right: 10px;top: 0;rotate: -5deg;transition: 0.3s ease-in-out;transform: scale(0.9);}
+.upgrade .design .picture:hover{rotate: 4deg;transform: scale(1);}
+
+.upgrade .birth .picture{position: absolute;left: -50px;transition: 0.3s ease-in-out;transform: scale(0.85);rotate: 10deg;}
+.upgrade .birth .picture:hover{transform: scale(1);rotate: -7.5deg;}
+.upgrade .birth{position: relative;top: 250px;left: 0;}
+.upgrade .birth .text{position: absolute;right:36px;top: 210px;}
+.upgrade .birth p{position: absolute;top: 110px;}
+
+/* ---------------------------------추가 업그레이드 내용 끝 */
+
+aside{width: 200px;height: 300px;background: var(--GR);border-radius: 10px;position: fixed ;top:13vh;right: 23px;z-index: 999;}
+aside h3{font-size: 35px;font-family: "Jua", sans-serif;color: var(--YW);font-weight:initial;padding-top: 22px;text-align: center;}
+aside select{border: none;width: 175px;height: 33px;border-radius: 10px; font-family: "Noto Sans KR", sans-serif;font-size: 20px;text-align: center;color: #5A5858;font-weight:bold;margin: 8px 14px;}
+aside button{width: 175px;height: 54px;border: none;border-radius: 25px;text-align: center;font-size:27px;color: var(--YW);background: var(--HP);font-family: "Jua", sans-serif;position: absolute;left:13px;bottom: 23px;
+transition: 0.1s;}
+aside button:hover{background:var(--YW) ;color: var(--HP);}
+/* -------------------------------------------------사이드메뉴 끝 */
+
+
+footer{height: 510px;position: relative;width:100%;}
+footer .bg{position: absolute;bottom: 0;left: 0;}
+footer .f_logo{position: absolute;top: 86px;left: 50%;transform: translateX(-50%);width: 169px;}
+footer .QULCK{display: flex;font-size: 17px;color: #5A5858;position: absolute;top: 195px;left: 359px;}
+footer .QULCK li{height: 14px; padding-right: 22px;padding-left: 22px;border-right: 1px solid;opacity: 0.7;line-height: 14px;}
+footer .QULCK li:last-child{border-right: none;}
+footer .QULCK li:first-child{border-right: none;font-size: 20px;opacity:0.8;padding-right: 46px;padding-left: 0;font-weight: bold;}
+footer .copyright{display: flex;color: #5A5858;font-size: 17px;font-weight: bold;opacity: 0.8;position: absolute;bottom: 256px;left: 359px;}
+footer .copyright li{padding-right: 28.5px;padding-left: 28.5px;border-right: 1.5px solid;height: 17px;line-height: 17px;}
+footer .copyright li:last-child{border-right: none;}
+footer .copyright li:first-child{padding-left: 0;}
+
+footer p{font-size: 17px;color: #5A5858;opacity: 0.4;position: absolute;left: 359px;bottom: 152px;}
+footer .SNS ul{display: flex;position: absolute;right: 285px;opacity: 0.8;top: 171px;}
+footer .SNS ul li{padding-left: 12px;}
+footer .SNS ul li img:hover{filter:invert(200%);}
+footer .familySite{position: absolute;right: 285px;bottom: 240px;}
+footer .familySite select{border: 1px solid #5E5E5E; color: #a1a1a1;font-size: 19px;letter-spacing: 1px;text-align: center;
+   width: 192px;height: 32px;}
+   footer .familySite select:hover{background: #f3f3f3;}
