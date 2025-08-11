@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <title>카드 배너 유형</title>
+    <style>
+        /* =============================================fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+        .jua {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+        }
+
+        .notokr {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 400;
+        }
+
+        /* ==========================================reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            position: absolute;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        :root {
+            --gray666: #666;
+            --pink: #ED3095;
+            --orange: #FCB247;
+            --light_green: #A8D267;
+            --blue: #44C8F1;
+            --green: #1EAF63;
+            --purple: #BA80B8;
+            --yellow: #EEE34D;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 1160px;
+        }
+
+        .space {
+            padding: 100px 0;
+        }
+
+        .tablet {
+            padding: none;
+        }
+
+        .orange {
+            color: var(--orange);
+        }
+
+        .pink {
+            color: var(--pink);
+        }
+
+        .l_green {
+            color: var(--light_green);
+        }
+
+        .blue {
+            color: var(--blue);
+        }
+
+        .green {
+            color: var(--green);
+        }
+
+        .purple {
+            color: var(--purple);
+        }
+
+        .yellow {
+            color: var(--yellow);
+        }
+
+        /* ================================ cardBennerType*/
+
+        .cardBenner_title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #5A5858;
+            margin-bottom: 10px;
+        }
+
+        .cardBenner_title span {
+            font-size: 64px;
+        }
+
+        .cardBenner_tap {
+            filter: drop-shadow(4px -2px 9px rgba(0, 0, 0, 10%));
+        }
+
+        .cardBenner_tap>ul {
+            display: flex;
+        }
+
+        .cardBenner_tap .tap_title a {
+            font-size: 36px;
+            color: #fff;
+            display: block;
+            padding: 10px 55px 0;
+            transition: filter 0.2s;
+        }
+
+        .cardBenner_tap .tap_title a:hover {
+            filter: brightness(90%);
+        }
+
+        .cardBenner_tap .tap_title:first-child a {
+            color: var(--orange);
+            background-color: var(--yellow);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+        }
+
+        .cardBenner_tap .tap_title:nth-child(2) a {
+            background-color: var(--light_green);
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+
+        .cardBenner_tap .tap_title:last-child a {
+            background-color: var(--blue);
+            clip-path: polygon(7% 0%, 93% 0%, 100% 100%, 0% 100%);
+        }
+
+        .cardBenner_box {
+            background-color: var(--yellow);
+            position: relative;
+            max-width: 1240px;
+            width: 100%;
+            height: 617px;
+            margin: 0 auto;
+            filter: drop-shadow(3px 2px 4px rgba(0, 0, 0, 10%));
+        }
+
+        .box_container{width: 100%;height: 100%; position: absolute;z-index: 99;}
+        .cardBenner_box .box {
+            width: calc(100% - 80px);
+            height: 617px;
+            overflow: hidden;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+          z-index: 99;
+         
+        }
+
+        .cardBenner_con {
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: left 0.7s;
+
+        }
+        .cardBenner_box .box #clothes {
+            visibility: visible;
+        }
+
+        .cardBenner_box .box #doll {
+            visibility: hidden;
+        }
+
+        .cardBenner_box .box #etc {
+            visibility: hidden;
+        }
+
+        .figure_box {
+            display: flex;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .cardBenner_box figure {
+            width: 373px;
+        }
+
+        .cardBenner_box figcaption {
+            padding: 0 20px;
+        }
+
+        .cardBenner_box figcaption>h3 {
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .cardBenner_box figcaption>p {
+            color: #000;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .cardBenner_box figcaption>p span {
+            color: var(--pink);
+        }
+
+        .figcaption_img {
+            object-fit: cover;
+            width: 100%;
+            height: 322px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #fff;
+        }
+
+        .figcaption_img img {
+            transition: 0.3s;
+            filter: grayscale(80%);
+        }
+
+        .figcaption_img img:hover {
+            filter: grayscale(0%);
+            scale: 1.05;
+        }
+
+        .cardBenner_button {
+            width: 101px;
+            height: 101px;
+            background-color: #202020;
+            position: absolute;
+            top: 220px;
+            border-radius: 50%;
+            box-shadow: 4px 4px rgba(0, 0, 0, 13%);
+            cursor: pointer;
+            transition: transform 0.1s;
+            display: none;
+        }
+
+        .cardBenner_inner .left {
+            left: -55px;
+            filter: grayscale(100%);
+        }
+
+        .cardBenner_inner .right {
+            right: -55px;
+        }
+
+        .cardBenner_button::after {
+            content: "";
+            top: 50%;
+            display: block;
+            position: absolute;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 30px;
+        }
+
+        .cardBenner_inner .left::after {
+            left: 18px;
+            background: url(img/cardBenner_Icon.svg);
+        }
+
+        .cardBenner_inner .right::after {
+            right: 18px;
+            background: url(img/cardBenner_Icon.svg)no-repeat -30px 0;
+        }
+
+        .cardBenner_inner .left:hover {
+            transform: translateX(-5px);
+        }
+
+        .cardBenner_inner .right:hover {
+            transform: translateX(5px);
+        }
+
+        .abbreviation {
+            font-size: 40px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+        }
+
+
+        @media (max-width : 1400px) {
+            .cardBenner_box {
+                max-width: none;
+                width: 100%;
+            }
+
+            .container {
+                margin: 0 auto;
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .cardBenner_box .box {
+                width: calc(100% - 17vw);
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 0;
+            }
+
+            .cardBenner_box figure {
+                width: 26vw;
+            }
+
+            .figcaption_img {
+                height: auto;
+            }
+
+            .cardBenner_button {
+                width: auto;
+                height: auto;
+                background-color: none;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                box-shadow: none;
+                cursor: pointer;
+                transition: transform 0.1s;
+                display: none;
+            }
+
+            .cardBenner_inner .left {
+                left: 0px;
+                filter: grayscale(100%);
+            }
+
+            .cardBenner_inner .right {
+                right: 0px;
+            }
+
+            .cardBenner_inner .left:hover {
+                transform: translateX(0px);
+            }
+
+            .cardBenner_inner .right:hover {
+                transform: translateX(0px);
+            }
+
+            .cardBenner_button::after {
+                filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 30%)) brightness(300%);
+            }
+        }
+
+
+        @media (max-width : 1180px) {
+            .cardBenner_box figure {
+                width: 39.5vw;
+            }
+
+            .cardBenner_con {
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: left 0.7s;
+                z-index: 999;
+            }
+
+            .cardBenner_box {
+                height: 665px;
+            }
+        }
+
+
+        @media (max-width : 900px) {
+            .space {
+                padding: 50px 0;
+            }
+
+            .cardBenner_box {
+                height: clamp(440px, 75vw, 696px);
+            }
+
+            .cardBenner_title {
+                font-size: clamp(1rem, 4.5vw, 8rem);
+                text-wrap: nowrap;
+            }
+
+            .cardBenner_title span {
+                font-size: clamp(2rem, 7vw, 8rem);
+            }
+
+            .cardBenner_tap .tap_title a {
+                text-wrap: nowrap;
+                font-size: clamp(1rem, 4vw, 8rem);
+                padding: 10px 4vw 0;
+            }
+
+            .cardBenner_box figcaption {
+                padding: 0 10px;
+            }
+
+            .cardBenner_box figcaption>h3 {
+                font-size: clamp(2rem, 4vw, 8rem);
+            }
+
+            .cardBenner_box figcaption>p {
+                line-height: 1.4;
+                font-size: clamp(1rem, 2vw, 5rem);
+            }
+        }
+
+
+        @media (max-width:700px) {
+            .cardBenner_box {
+                height: clamp(520px, 85vw, 800px);
+            }
+
+            .cardBenner_box figure {
+                width: 59vw;
+            }
+
+            .cardBenner_box .box {
+                width: calc(100% - 39vw);
+            }
+            .figure_box {
+          
+            gap:2vw;
+      
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardBennerType" class="cardBenner_warp  space notokr">
+        <h2 class="blind">카드배너 유형</h2>
+        <div class="cardBenner_inner">
+            <h2 class="cardBenner_title container"><span class="jua orange">B</span><span
+                    class="jua l_green">u</span><span class="jua blue">d</span><span class="jua pink">s</span><span
+                    class="jua yellow">i</span><span class="jua green">e</span><span class="jua purple">s</span> 만의 맞춤
+                상품 소개!</h2>
+            <ul>
+                <li class="cardBenner_tap jua container">
+                    <ul>
+                        <li class="tap_title tap1"><a href="#clothes">의복</a></li>
+                        <li class="tap_title tap2"><a href="#doll">봉제인형</a></li>
+                        <li class="tap_title tap3"><a href="#etc">생활용품/악세서리</a></li>
+                    </ul>
+                </li>
+                <!-- slider-container -->
+                <li class="cardBenner_box">
+                    <div class="box_container">
+
+                        <ul class="box container">
+                            <!-- slides -->
+                            <li id="clothes" class="cardBenner_con">
+                                <!-- slide s1,s2....-->
+                                <div class="figure_box">
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img1-1.jpg" alt="양말 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">양말</h3>
+                                            <p class="abbreviation">당신의 <span>사랑하는 사람을 담은 맟춤형 양말을 제작해 보세요.</span> 여러 패턴의
+                                                디자인과 더불어 여러분의 배우자, 친구,
+                                                반려동물,
+                                                로고까지 프린트해 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img1-2.jpg" alt="잠옷 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">커스텀 잠옷</h3>
+                                            <p class="abbreviation"><span>여러 패턴</span>과 더불어 <span>다양한 사이즈</span>까지 준비되어있는
+                                                잠옷은 어떠신가요? 사이즈는 아동용부터
+                                                성인용까지
+                                                다양하며 긴팔, 반팔, 긴바지, 반바지까지 구비되어 있습니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img1-3.jpg" alt="셔츠 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">셔츠</h3>
+                                            <p class="abbreviation"><span>편안함과 유니크한 스타일까지 갖춘 머스텀 셔즈!</span> 하와이안 셔츠와 골프 셔츠의
+                                                두가지 종류로 원하시는 디자인과 패턴을
+                                                선택하여 꾸며보세요!</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li id="doll" class="cardBenner_con">
+                                <div class="figure_box">
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img2-1.jpg" alt="그림 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">그림 인형</h3>
+                                            <p class="abbreviation">그린 그림으로 인형을 만들뿐만 아니라 좋아하는 캐릭터, 일러스트 사진으로도 제작 가능합니다.
+                                                <span>하트비트 사운드</span>와
+                                                <span>인조모피, 스테인리스 스틸 펠릿</span> 도 추가해서 만들어보세요.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img2-2.jpg" alt="셀카 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">셀카 인형</h3>
+                                            <p class="abbreviation"><span>자신의 사진이나 소중한 사람의 사진을 인형으로 제작해보세요.</span> 피부톤, 눈색,
+                                                머리색, 코의 종류을 골라 맞춤제작이
+                                                가능합니다. 하트비트 사운드 뿐만 아니라 보이스 레코더도 추가하여 음성도 넣어보세요.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img2-3.jpg" alt="퍼펫 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">퍼펫 인형</h3>
+                                            <p class="abbreviation"><span>그림이나 인물 사진등을 퍼펫 인형으로 제작해 보세요.</span> 고급 플러시 소재,
+                                                자수, 인조 모피로 맞춤 제작해 드립니다.
+                                                머리와
+                                                팔을 자유로이 움직일수 있는 셀피 인형도 제작해 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img2-4.jpg" alt="전문 커미션 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">전문 커미션</h3>
+                                            <p class="abbreviation"><span>완벽한 나만의 봉제인형을 제작해 보세요.</span> 고품질 플러시 원단과 특수 소재를
+                                                이용해 경험이 풍부한 전문 디자이너가
+                                                직접
+                                                제작해 드립니다. 여러번 피드백이 가능하며 원하시는 요청대로 수정이 가능합니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img2-5.jpg" alt="애완동물 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">애완동물 인형</h3>
+                                            <p class="abbreviation"><span>나만의 애완동물을 위한 맞춤형 인형을 제작해 보세요.</span> 자매 브랜드인
+                                                <span>Petsies</span>에서
+                                                애완동물
+                                                인형뿐만 아니라 베게, 담요, 양말 등 여러상품을 제작합니다.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li id="etc" class="cardBenner_con">
+                                <div class="figure_box">
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img3-1.jpg" alt="베게 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">베게</h3>
+                                            <p class="abbreviation"><span>모든 상황에 맞는 맟춤형 베개는 어떻신가요?</span> 얼굴이 프린트 되어있는 버디베개
+                                                뿐만 아니라 만화베게, 사진베게도 제해
+                                                드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img3-2.jpg" alt="담요 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">담요</h3>
+                                            <p class="abbreviation"><span> 맞춤형 사진 담요로 아늑하고 특별한 하루를 보내세요!</span> 당신이 선택한 디자인과
+                                                사진으로 나만의 담요를 제작해
+                                                드립니다.
+                                                벨벳, 세르파, 직물의 3가지 소재중 하나를 선택할 수 있습니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img3-3.jpg" alt="열쇠고리 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">열쇠고리</h3>
+                                            <p class="abbreviation"><span>여러분의 사진이나 캐릭터가 그려진 열세고리는 어떠신가요?</span>양면에 좋아하는 사진이
+                                                인쇄되어 있으며, 풀리에스터 봉제와
+                                                하트
+                                                모양 홀더까지 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+    
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="#">
+                                                <img src="img/cardBenner_img3-4.jpg" alt="피규어 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">보블헤드 및 피규어</h3>
+                                            <p class="abbreviation"><span>나만의 특별한 장식품을 원하시는 분께 추천!</span> 사진이나 일러스트 그림을
+                                                보내드리면 보블헤드 또는 피규어로 제작해
+                                                드립니다.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="left cardBenner_button"></div>
+                    <div class="right cardBenner_button"></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        const tab = document.querySelectorAll(".tap_title");
+        const cardBenner = document.querySelectorAll(".box_container");
+        const tabCont = document.querySelectorAll(".cardBenner_con");
+        const clothes = document.querySelector("#clothes");
+        const doll = document.querySelector("#doll");
+        const etc = document.querySelector("#etc");
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const tap1 = document.querySelector(".tap1");
+        const tap2 = document.querySelector(".tap2");
+        const tap3 = document.querySelector(".tap3");
+
+        tap1.addEventListener("click", function (e) {
+            e.preventDefault()
+            left.style.display = "none"
+            right.style.display = "none"
+            cardBenner.forEach(function (benner) {
+                benner.style.backgroundColor = "var(--yellow)";
+            });
+        });
+        tap2.addEventListener("click", function (e) {
+            e.preventDefault()
+            left.style.display = "block"
+            right.style.display = "block"
+            cardBenner.forEach(function (benner) {
+                benner.style.backgroundColor = "var(--light_green)";
+            });
+        });
+        tap3.addEventListener("click", function (e) {
+            e.preventDefault()
+            left.style.display = "block"
+            right.style.display = "block"
+            cardBenner.forEach(function (benner) {
+                benner.style.backgroundColor = "var(--blue)";
+            });
+        });
+
+        tab.forEach((tab, index) => {
+            tab.addEventListener("click", (e) => {
+                e.preventDefault()
+                tabCont.forEach(cont => cont.style.visibility = 'hidden');   //모든 콘텐츠를 숨기
+                tabCont.forEach(cont => cont.style.opacity = '0');   //모든 콘텐츠를 숨기
+                tabCont[index].style.visibility = 'visible';   //클릭한 버튼의 콘텐츠 내용을 보여줌
+                tabCont[index].style.opacity = '1';   //클릭한 버튼의 콘텐츠 내용을 보여줌
+            });
+        });
+
+        function getResponsiveLeftValues() {
+            const screenWidth = window.innerWidth;
+            let clothesLeft, dollLeft, etcLeft;
+            // 화면 너비에 따라 `left` 값을 설정
+            if (screenWidth < 700) {
+                let clothesMoveCount = 0; // 이동 횟수 추적
+                let dollMoveCount = 0; // 이동 횟수 추적
+                let etcMoveCount = 0; // 이동 횟수 추적
+                
+                const clothesmaxMoves = 2; // 최대 이동 횟수
+                const maxMoves = 4; // 최대 이동 횟수
+                const etcmaxMoves = 3; // 최대 이동 횟수
+
+                right.addEventListener("click", function () {
+
+                    if (clothesMoveCount < clothesmaxMoves) {
+                        clothesMoveCount++;
+                        clothes.style.left = `${-61 * clothesMoveCount}vw`; // -30vw씩 이동
+                    } else {
+                        clothes.style.left = "0vw"; // 원래 위치로 돌아감
+                        clothesMoveCount = 0; // 이동 횟수 초기화
+                    }
+
+                    if (dollMoveCount < maxMoves) {
+                        dollMoveCount++;
+                        doll.style.left = `${-61 * dollMoveCount}vw`; // -30vw씩 이동
+                    } else {
+                        doll.style.left = "0vw"; // 원래 위치로 돌아감
+                        dollMoveCount = 0; // 이동 횟수 초기화
+                    }
+
+                    if (etcMoveCount < etcmaxMoves) {
+                        etcMoveCount++;
+                        etc.style.left = `${-61 * etcMoveCount}vw`; // -30vw씩 이동
+                    } else {
+                        etc.style.left = "0vw"; // 원래 위치로 돌아감
+                        etcMoveCount = 0; // 이동 횟수 초기화
+                    }
+                });
+
+                left.addEventListener("click", function () {
+                    if (dollMoveCount > 0) {
+                        dollMoveCount--; // 이동 횟수 감소
+                        doll.style.left = `${-61 * dollMoveCount}vw`; // 원래 위치로 돌아감
+                    }
+                });
+                
+                tap1.addEventListener("click", function (e) {
+                    e.preventDefault()
+                    left.style.display = "block"
+                    right.style.display = "block"
+                });
+                left.style.display = "block"
+                right.style.display = "block"
+            }
+            else if (screenWidth < 1180) {
+                clothesLeft = "-41.5vw"; // 예: 화면 너비의 50%만큼 왼쪽으로 이동
+                let dollLeftPosition = 0; // 초기 위치 (vw 단위)
+
+                right.addEventListener("click", function () {
+                    if (dollLeftPosition === -0) {
+                        dollLeftPosition = -82; // 두 번째 클릭 시 이동할 위치
+                    } else if (dollLeftPosition === -82) {
+                        dollLeftPosition = -125; // 세 번째 클릭 시 이동할 위치
+                    } else {
+                        dollLeftPosition = -0; // 다시 첫 번째 클릭으로 돌아가기
+                    }
+                    // doll의 left 위치 업데이트
+                    doll.style.left = `${dollLeftPosition}vw`;
+                    // 나머지 코드...
+                });
+                etcLeft = "-82.4vw";
+                left.style.display = "block"
+                right.style.display = "block"
+                tap1.addEventListener("click", function (e) {
+                    e.preventDefault()
+                    left.style.display = "block"
+                    right.style.display = "block"
+                });
+            }
+            else if (screenWidth < 1400) {
+                dollLeft = "-55vw";
+                etcLeft = "-28vw";
+                tap1.addEventListener("click", function (e) {
+                    e.preventDefault()
+                    left.style.display = "none"
+                    right.style.display = "none"
+
+                });
+            } else {
+                dollLeft = "-785px"; // 예: 더 큰 화면에서의 위치 조정
+                etcLeft = "-392px";
+                left.style.display = "none"
+                right.style.display = "none"
+            }
+            return { clothesLeft, dollLeft, etcLeft };
+        }
+
+        function updatePositions() {
+            const { clothesLeft, dollLeft, etcLeft } = getResponsiveLeftValues();
+            right.addEventListener("click", function () {
+                clothes.style.left = clothesLeft;
+                doll.style.left = dollLeft;
+                etc.style.left = etcLeft;
+                this.style.filter = "grayscale(100%)";
+                left.style.filter = "grayscale(0%)";
+            });
+
+            left.addEventListener("click", function () {
+                clothes.style.left = "0px";
+                doll.style.left = "0px";
+                etc.style.left = "0px";
+
+                this.style.filter = "grayscale(100%)";
+                right.style.filter = "grayscale(0%)";
+            });
+        }
+        // 초기화
+        updatePositions();
+        // 브라우저 창 크기 변경 시 `updatePositions` 호출
+        window.addEventListener('resize', updatePositions);
+
+
+
+    </script>
+</body>
+
+</html>

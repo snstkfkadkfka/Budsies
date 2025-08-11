@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="css/substyle.css">
+    <script defer src="js/subsxript.js"></script>
+    <title>Budsies / 수제봉제인형</title>
+
+</head>
+
+<body>
+    <!-- ===========================Mobile headermenu -->
+    <div class="mobil_menu notokr">
+        <h2 class="blind">모바일 사이드 메뉴</h2>
+        <div class="side_bar">
+            <div class="top_login">
+                <a href="#">로그인</a>
+                <span>로그인이 필요합니다.</span>
+            </div>
+            <div class="mobil_sideMenu">
+                <ul>
+                    <li><a href="#">Budsies 소개</a></li>
+                    <li><a href="#">상품 소개</a></li>
+                    <li><a href="#">제작문의</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">기타 상품</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobil_menu_bg"></div>
+    </div>
+    <!-- =================================== headerType-->
+    <header id="headerType" class="header_wrap jua ">
+        <h2 class="blind">헤더영역</h2>
+        <div class="heder_inner tablet">
+            <h1 class="heder_logo"><a href="index.html"><img src="img/main/header/Logo.svg" alt="Budsies로고"></a></h1>
+            <div class="Mobile_heder">
+                <div class="hamburger"></div>
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Budsies 소개</a>
+                        <ul class="sub_menu notokr ">
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">주문방법</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">상품 소개</a>
+                        <ul class="sub_menu notokr">
+                            <li><a href="#">봉제상품</a></li>
+                            <li><a href="#">의복</a></li>
+                            <li><a href="#">가정용품 및 액세거리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제작문의</a>
+                        <ul class=" sub_menu notokr">
+                            <li><a href="#">문의 & 답변</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">리뷰</a>
+                        <ul class="sub_menu notokr">
+                            <li><a href="#">사진 리뷰</a></li>
+                            <li><a href="#">동영상 리뷰</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">기타 상품</a>
+                        <ul class="sub_menu last notokr">
+                            <li><a href="#">기프트카드</a></li>
+                            <li><a href="#">선물상자</a></li>
+                            <li><a href="#">기부상품</a></li>
+                            <li><a href="#">대량제작</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_icon">
+                <div><a href="#"></a></div>
+                <div><a href="#" class="login"></a></div>
+                <select class="select">
+                    <option value="Ko">Kor</option>
+                    <option value="En">En</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================bannerImgTypr -->
+    <section id="bannerImgTypr" class="bannerImg_wrap notokr">
+        <h2 class="blind">이미지 유형</h2>
+        <div class="bannerImg_inner">
+            <div class="bannerImg_bg">
+                <h2>나의 상상속 친구들을 직접 만나보자!</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================baenerTextType -->
+    <section id="baenerTextType" class="baenerText_wrap container space">
+        <h2 class="blind">배너 테스트 영역</h2>
+        <div class="baenerText_inner">
+            <ul>
+                <li class="baenerText_title jua">
+                    <ul>
+                        <li><a href="#painting" class="on" data-content="painting">
+                                <h3>그림 인형</h3>
+                            </a></li>
+                        <li><a href="#selfies" data-content="selfies">
+                                <h3>셀카 인형</h3>
+                            </a></li>
+                        <li><a href="#puppet" data-content="puppet">
+                                <h3>퍼펫 인형</h3>
+                            </a></li>
+                        <li><a href="#commissions" data-content="commissions">
+                                <h3>전문 커미션</h3>
+                            </a></li>
+                        <li><a href="#petsies" data-content="petsies">
+                                <h3>애완동물 인형</h3>
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="baenerText_box notokr">
+                    <ul>
+                        <li id="painting" class="baenerText_cont">
+                            <div class="baenerText_box_img">
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img1-1.jpg" alt="그림인형1">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img1-2.jpg" alt="그림인형2">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img1-3.jpg" alt="그림인형3">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="baenerText_box_text">
+                                <p class="pin_red">여러분의 작품이나 좋아하는 캐릭터를 기반으로 손수 만든 봉제 인형입니다.</p>
+                                <p class="pin_orange">높이 40cm(업그레이드 선택 시 76cm)</p>
+                                <p class="pin_yellow">하트비트 사운드와 가중치 추가 가능합니다.</p>
+                                <p class="pin_green">예상 배송 시간은 5~7주입니다.</p>
+                            </div>
+                        </li>
+                        <li id="selfies" class="baenerText_cont">
+                            <div class="baenerText_box_img">
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img2-1.jpg" alt="셀카인형1">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img2-2.jpg" alt="셀카인형2">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img2-3.jpg" alt="셀카인형3">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="baenerText_box_text">
+                                <p class="pin_red">제출된 사진을 기반으로 만들어진 40cm 또는 76cm의 수제 봉제 인형입니다.</p>
+                                <p class="pin_orange">폴리에스터 봉제 소재와 저자극성 충전재, 자수가 들어있습니다.</p>
+                                <p class="pin_yellow">음성 레코더,스테인리스 가중, 하트비트 사운드를 추가 가능합니다.</p>
+                                <p class="pin_green">예상 배송 시간은 5~7주입니다.</p>
+                            </div>
+                        </li>
+                        <li id="puppet" class="baenerText_cont">
+                            <div class="baenerText_box_img">
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img3-1.jpg" alt="퍼펫인형1">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img3-2.jpg" alt="퍼펫인형2">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img3-3.jpg" alt="퍼펫인형3">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="baenerText_box_text">
+                                <p class="pin_red">제출하신 사진(그림, 일러스트, 인물사진 등)은 어떤 것이든 모두 인형으로 제작할 수 있습니다.</p>
+                                <p class="pin_orange">고품질 플러시 소재, 자수, 인조 모피로 맞춤 제작해 드립니다.</p>
+                                <p class="pin_yellow">내부가 비어있는 16인치 반신형 인형으로 손으로 머리를 움직일 수 있습니다(셀피 인형은 머리와 팔 모두 제어 가능)
+                                </p>
+                                <p class="pin_green">요청 시 맞춤형 업그레이드가 가능합니다.</p>
+                            </div>
+                        </li>
+                        <li id="commissions" class="baenerText_cont">
+                            <div class="baenerText_box_img">
+                                <div class="box_img">
+                                    <a href="#">
+                                    <img src="img/sub/baenerText/baenerText_img4-1.jpg" alt="전문 커미션1">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img4-2.jpg" alt="전문 커미션2">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img4-3.jpg" alt="전문 커미션3">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="baenerText_box_text">
+                                <p class="pin_red">어떤 디자인이든 Budsies 가장 경험이 풍부한 디자이너가 맞춤 제작해 드립니다.</p>
+                                <p class="pin_orange">고품질 플러시 원단 및 특수 인조 모피로 제작합니다.</p>
+                                <p class="pin_yellow">두 차례 디자인 변경이 가능하며, 제작 중인 인형 사진을 받아 볼 수 있습니다.</p>
+                                <p class="pin_green">40cm 또는 76cm의 대형 업그레이드가 가능합니다.</p>
+                            </div>
+                        </li>
+                        <li id="petsies" class="baenerText_cont">
+                            <div class="baenerText_box_img">
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img5-1.jpg" alt="애완동물 인형1">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                    <img src="img/sub/baenerText/baenerText_img5-2.jpg" alt="애완동물 인형2">
+                                    </a>
+                                </div>
+                                <div class="box_img">
+                                    <a href="#">
+                                        <img src="img/sub/baenerText/baenerText_img5-3.jpg" alt="애완동물 인형3">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="baenerText_box_text">
+                                <p class="pin_red">자매 브랜드 회사인 petsies에서 제작해 드립니다.</p>
+                                <p class="pin_orange">저자극성 소재, 폴리에스터 모피를 사용합니다.</p>
+                                <p class="pin_yellow"> 소비자 제품 안전 위원회에서 품질과 안전성을 보장받은 프리미엄 슈퍼 소프트 플러시 제품을 사용합니다.</p>
+                                <p class="pin_green">크기는 약 40cm이며, 더 작은 사이즈일 경우 25cm도 제공합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- =-============================================= videoType-->
+    <section id="videoType" class="video_wrap ">
+        <h2 class="blind">비디오 영역</h2>
+        <div class="video_inner container space">
+            <h3 class="title">Budsies 제작과정</h3>
+            <div class="video_mp4">
+            
+                <iframe src="https://www.youtube.com/embed/WCxT3WcM_h0?si=iPy5azVYGxZyJ5Ss" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================================== imageTextType-->
+    <section id="imageTextType" class="imageText_wrap space container notokr">
+        <h2 class="blind">이미지 텍스트 영역</h2>
+        <div class="imageText_inner">
+            <div class="imageText_title">
+                <h3>추가 업그레이드</h3><span>(선택사항)</span>
+            </div>
+            <figure class="imageText_figure figure01">
+                <figcaption>
+                    <div class="pinBG jua">
+                        <p>디자인 미리보기<i>(완성 보증)</i> </p><span>+ 6만원</span>
+                    </div>
+                    <p class="desa">배송되기 전의 미리보기 사진을 받아 디자인을 확인해 보세요. <br>
+                        만들어진 인형에 원하는 수정 사항과 피드백이 있으시면
+                        바로 변경해 드립니다.
+                        복잡한 그림이나 3D캐릭터의 디자인으로 고민인 분들께 추천해 드립니다.
+                    </p>
+                    <span class="ex1">&#40;상품이 마음에 드시지 않거나 변경 사항에 수정이 어려울 경우 상품을 바로 환불해 드립니다&#41;</span>
+                    <span class="ex2">배송을 보장하려면 연락처 목록에 support@budsies.com을 추가해 주세요.</span>
+                </figcaption>
+                <div class="imageText_img">
+                    <div class="imgbox01"></div>
+                </div>
+            </figure>
+            <figure class="imageText_figure figure02">
+                <figcaption>
+                    <div class="pinBG jua">
+                        <p>출생 증명서</p><span>+ 8천원</span>
+                    </div>
+                    <p class="desa">화려한 Star bright 커버 스톡에 인쇄된 정품 Budsies의 출생증명서입니다.
+                        나의 친구가 태어난 특별한 날을 기념해 보세요.
+                    </p>
+                </figcaption>
+                <div class="imageText_img">
+                    <div class="imgbox02"></div>
+                </div>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ======================================================= footerType-->
+    <footer id="footerType" class="footer_wrap notokr space">
+        <h2 class="blind">푸터영역</h2>
+        <div class="footer_inner container">
+            <h1 class="footer_logo"><a href="index.html"><img src="img/main/footer/footer_logo.svg" alt="푸터 로고"></a></h1>
+            <div class="footer_menu">
+                <dl>
+                    <dt>QULCK LINKS</dt>
+                    <dd><a href="#">Budsies소개</a></dd>
+                    <dd><a href="#">상품소개</a></dd>
+                    <dd><a href="#">제작문의</a></dd>
+                    <dd><a href="#">리뷰</a></dd>
+                    <dd><a href="#">기타상품</a></dd>
+                    <dd><a href="#">장바구니</a></dd>
+                    <dd><a href="#">회원가입</a></dd>
+                </dl>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+                <div class="footer_box">
+                    <div class="footer_sns">
+                        <div class="footer_icon icon1"></div>
+                        <div class="footer_icon icon2"></div>
+                        <div class="footer_icon icon3"></div>
+                        <div class="footer_icon icon4"></div>
+                        <div class="footer_icon icon5"></div>
+                    </div>
+                    <select name="FamilySite" id="FamilySite">
+                        <option value="#" hidden>Family site</option>
+                        <option value="petsies">petsies</option>
+                        <option value="stuffedanimalpros">stuffedanimalpros</option>
+                        <option value="waggables">waggables</option>
+                    </select>
+                </div>
+            </div>
+            <p>©2024 BUDSIES PR LLC. 판권 소유.</p>
+        </div>
+        <div class="footerImg img1"></div>
+        <div class="footerImg img2"></div>
+        <div class="footerImg img3"></div>
+    </footer>
+</body>
+
+</html>

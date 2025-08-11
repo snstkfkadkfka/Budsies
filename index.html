@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <title>Budsies</title>
+
+</head>
+
+<body>
+    <!-- ===========================Mobile headermenu -->
+    <div class="mobil_menu notokr">
+        <h2 class="blind">모바일 사이드 메뉴</h2>
+        <div class="side_bar">
+            <div class="top_login">
+                <a href="#">로그인</a>
+                <span>로그인이 필요합니다.</span>
+            </div>
+            <div class="mobil_sideMenu">
+                <ul>
+                    <li><a href="sub.html">Budsies 소개</a></li>
+                    <li><a href="sub.html">상품 소개</a></li>
+                    <li><a href="sub.html">제작문의</a></li>
+                    <li><a href="sub.html">리뷰</a></li>
+                    <li><a href="sub.html">기타 상품</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobil_menu_bg"></div>
+    </div>
+    <!-- =================================== headerType-->
+    <header id="headerType" class="header_wrap jua ">
+        <h2 class="blind">헤더영역</h2>
+        <div class="heder_inner tablet">
+            <h1 class="heder_logo"><a href="#"><img src="img/main/header/Logo.svg" alt="Budsies로고"></a></h1>
+            <div class="Mobile_heder">
+                <div class="hamburger"></div>
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Budsies 소개</a>
+                        <ul class="sub_menu notokr ">
+                            <li><a href="sub.html">회사소개</a></li>
+                            <li><a href="sub.html">연혁</a></li>
+                            <li><a href="sub.html">주문방법</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">상품 소개</a>
+                        <ul class="sub_menu notokr">
+                            <li><a href="sub.html">봉제상품</a></li>
+                            <li><a href="sub.html">의복</a></li>
+                            <li><a href="sub.html">가정용품 및 액세거리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제작문의</a>
+                        <ul class=" sub_menu notokr">
+                            <li><a href="sub.html">문의 & 답변</a></li>
+                            <li><a href="sub.html">1:1 문의</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">리뷰</a>
+                        <ul class="sub_menu notokr">
+                            <li><a href="sub.html">사진 리뷰</a></li>
+                            <li><a href="sub.html">동영상 리뷰</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">기타 상품</a>
+                        <ul class="sub_menu last notokr">
+                            <li><a href="sub.html">기프트카드</a></li>
+                            <li><a href="sub.html">선물상자</a></li>
+                            <li><a href="sub.html">기부상품</a></li>
+                            <li><a href="sub.html">대량제작</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_icon">
+                <div><a href="#"></a></div>
+                <div><a href="#" class="login"></a></div>
+                <select class="select">
+                    <option value="Ko">Kor</option>
+                    <option value="En">En</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- =============================================slider_wrap -->
+    <section id="sliderType" class="slider_wrap space">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider_titel jua">
+            <p class="title_l"><span class="odd orange">나</span><span class="even pink">만</span><span
+                    class="odd l_green">의</span> <span class="even blue">인</span><span class="odd green">형</span><span
+                    class="even purple">을</span> </p>
+            <p class="title_r"><span class="odd yellow">제</span><span class="even orange">작</span><span
+                    class="odd pink">하</span><span class="even l_green">자</span><span class="odd purple">!</span></p>
+            </div>
+        <div class="slider_inner swiper container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="sub.html"><img src="img/main/slider/slider01-min.jpg" alt="그림 인형 사진"></a>
+                    <div class="slider_text">
+                        <h3>나만의 그림 인형</h3>
+                        <p class="notokr">나의 다자인 캐릭터뿐만 아니라 동화속 일러스트와 사진, 게임 캐릭터들도 만들어 드립니다.</p>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <a href="sub.html"><img src="img/main/slider/slider02-min.jpg" alt="인형 복원 사진"></a>
+                    <div class="slider_text">
+                        <h3>애착인형 복원</h3>
+                        <p class="notokr">아끼는 애착 인형을 복원하고 싶으신가요? 걱정 마세요! 사진과 디자인 설명만 있으면 똑같이 제작 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <a href="sub.html"><img src="img/main/slider/slider03-min.jpg" alt="애완동물 인형 사진"></a>
+                    <div class="slider_text">
+                        <h3>실사 애완동물 인형</h3>
+                        <p class="notokr">Budsies의 자매 회사인 petsies에서 당신의 반려동물과 똑같은 인형을 제작해 드립니다. 또한 다른 자매회사에 대량주문과 특별한
+                            캐릭터 인형도 제작해 드려요.
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <a href="sub.html"><img src="img/main/slider/slider04-min.jpg" alt="인형 기부 사진"></a>
+                    <div class="slider_text">
+                        <h3>인형을 후원하자!</h3>
+                        <p class="notokr">저희 Budsies에 후원해 주신다면 병마와 힘들게 싸우는 아이들의 곁을 지켜줄 작은 친구를 만들 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- =========================================imagetextType -->
+    <section id="imagetextType" class="imageText_wrap notokr space">
+        <h2 class="blind">이미지 텍스트 영역</h2>
+        <div class="imageText_inner container">
+            <h2 class="imageText_title">인형 주문 방법</h2>
+            <div class="article box1">
+                <div class="image img1">
+                    <div class="flash01"></div>
+                    <div class="flash02"></div>
+                    <div class="dinosaur"></div>
+                </div>
+                <div class="text">
+                    <h3 class="title jua">그림 사진 찍기</h3>
+                    <p class="desa">그림, 조각품, 만화, 캐릭터 등을 만들고 싶은 인형의 <span>디자인 사진을 찍어 주세요.</span></p>
+                </div>
+            </div>
+            <div class="article box2">
+                <div class="image img2">
+                    <div class="talk01"></div>
+                    <div class="talk02"></div>
+                    <div class="talk03"></div>
+                    <div class="talk04"></div>
+                    <div class="talk05"></div>
+                </div>
+                <div class="text">
+                    <h3 class="title jua">업로드 후 상세설명</h3>
+                    <p class="desa"><span>사이트에 사진을 업로드</span> 한 후, 디자인에 대한
+                        <span>상세 설명</span>을 해주세요.
+                    </p>
+                </div>
+            </div>
+            <div class="article box3">
+                <div class="image img3">
+                    <div class="hart01"></div>
+                    <div class="hart02"></div>
+                    <div class="hart03"></div>
+                </div>
+                <div class="text">
+                    <h3 class="title jua">인형 도착!</h3>
+                    <p class="desa"><span>새로운 친구를 맞이해 주세요!!
+                        </span>주문이 완료되면 이메일로 상세 내역을 받을 수 있어요. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== imgDesaType-->
+    <section id="imgDesaType" class="imgDesa_wrap notokr container space">
+        <h2 class="blind">이미지 설명_인형 기능 설명</h2>
+        <div class="imgDesa_inner ">
+            <h2 class="title">인형의 <span>다양한 추가기능!</span></h2>
+            <div class="Doll_img">
+                <div class="point click01">
+                </div>
+                <div class="point click02">
+                </div>
+                <div class="point click03">
+                </div>
+            </div>
+            <div class="imgDesa_box">
+                <div class="imgDesa_article fur">
+                    <div class="article_line line1"></div>
+                    <div class="text">
+                        <p class="desa">
+                            Budsies에 가장 잘 어울리는 특수 인조모피 원단만을 사용합니다.
+                            포함시키고 싶은 부분에 넣어보세요. <br>
+                            <span>예&#41; 전체포함 & 특정부분 포함</span>
+                        </p>
+                        <div class="img fur_img"></div>
+                    </div>
+                </div>
+                <div class="imgDesa_article heartBeat">
+                    <div class="article_line line2"></div>
+                    <div class="img heartBeat_img"></div>
+                    <div class="text">
+                        <p class="desa">
+                            하트 모양의 사운드 모듈로 사실적인
+                            심장박동 소리를 추가하여 생명을
+                            불어넣으세요!<br>
+                            <span>&#40;셀카 인형에는 보이스 레코더도 추가 가능&#41;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgDesa_article pellet">
+                    <div class="article_line line3"></div>
+                    <div class="text">
+                        <p class="desa">
+                            스테인리스 스틸 펠릿의 구술을 추가하여
+                            작은 동물을 안은 듯한 무게감을 느껴보세요!
+                            플러시 천 몸체에 꿔메어 있어 빠질 걱정은
+                            없습니다. 안심해주세요!
+                            <span>&#40;약 2파운드=907g&#41;</span>
+                        </p>
+                        <div class="img pellet_img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================== cardBennerType-->
+    <section id="cardBennerType" class="cardBenner_warp  space notokr">
+        <h2 class="blind">카드배너 유형</h2>
+        <div class="cardBenner_inner">
+            <h2 class="cardBenner_title container"><span class="jua orange">B</span><span
+                    class="jua l_green">u</span><span class="jua blue">d</span><span class="jua pink">s</span><span
+                    class="jua yellow">i</span><span class="jua green">e</span><span class="jua purple">s</span> 만의 맞춤
+                상품 소개!</h2>
+            <ul>
+                <li class="cardBenner_tap jua container">
+                    <ul>
+                        <li class="tap_title tap1"><a href="#clothes">의복</a></li>
+                        <li class="tap_title tap2"><a href="#doll">봉제인형</a></li>
+                        <li class="tap_title tap3"><a href="#etc">생활용품/악세서리</a></li>
+                    </ul>
+                </li>
+                <li class="cardBenner_box">
+                    <div class="box_container">
+                        <ul class="box container">
+                            <li id="clothes" class="cardBenner_con">
+                                <div class="figure_box">
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img1-1.jpg" alt="양말 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">양말</h3>
+                                            <p class="abbreviation">당신의 <span>사랑하는 사람을 담은 맟춤형 양말을 제작해 보세요.</span> 여러 패턴의
+                                                디자인과 더불어 여러분의 배우자, 친구,
+                                                반려동물,
+                                                로고까지 프린트해 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img1-2.jpg" alt="잠옷 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">커스텀 잠옷</h3>
+                                            <p class="abbreviation"><span>여러 패턴</span>과 더불어 <span>다양한 사이즈</span>까지
+                                                준비되어있는
+                                                잠옷은 어떠신가요? 사이즈는 아동용부터
+                                                성인용까지
+                                                다양하며 긴팔, 반팔, 긴바지, 반바지까지 구비되어 있습니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img1-3.jpg" alt="셔츠 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">셔츠</h3>
+                                            <p class="abbreviation"><span>편안함과 유니크한 스타일까지 갖춘 머스텀 셔즈!</span> 하와이안 셔츠와 골프
+                                                셔츠의
+                                                두가지 종류로 원하시는 디자인과 패턴을
+                                                선택하여 꾸며보세요!</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li id="doll" class="cardBenner_con">
+                                <div class="figure_box">
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img2-1.jpg" alt="그림 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">그림 인형</h3>
+                                            <p class="abbreviation">그린 그림으로 인형을 만들뿐만 아니라 좋아하는 캐릭터, 일러스트 사진으로도 제작 가능합니다.
+                                                <span>하트비트 사운드</span>와
+                                                <span>인조모피, 스테인리스 스틸 펠릿</span> 도 추가해서 만들어보세요.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img2-2.jpg" alt="셀카 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">셀카 인형</h3>
+                                            <p class="abbreviation"><span>자신의 사진이나 소중한 사람의 사진을 인형으로 제작해보세요.</span> 피부톤,
+                                                눈색,
+                                                머리색, 코의 종류을 골라 맞춤제작이
+                                                가능합니다. 하트비트 사운드 뿐만 아니라 보이스 레코더도 추가하여 음성도 넣어보세요.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img2-3.jpg" alt="퍼펫 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">퍼펫 인형</h3>
+                                            <p class="abbreviation"><span>그림이나 인물 사진등을 퍼펫 인형으로 제작해 보세요.</span> 고급 플러시
+                                                소재,
+                                                자수, 인조 모피로 맞춤 제작해 드립니다.
+                                                머리와
+                                                팔을 자유로이 움직일수 있는 셀피 인형도 제작해 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img2-4.jpg" alt="전문 커미션 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">전문 커미션</h3>
+                                            <p class="abbreviation"><span>완벽한 나만의 봉제인형을 제작해 보세요.</span> 고품질 플러시 원단과 특수
+                                                소재를
+                                                이용해 경험이 풍부한 전문 디자이너가
+                                                직접
+                                                제작해 드립니다. 여러번 피드백이 가능하며 원하시는 요청대로 수정이 가능합니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img2-5.jpg" alt="애완동물 인형 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">애완동물 인형</h3>
+                                            <p class="abbreviation"><span>나만의 애완동물을 위한 맞춤형 인형을 제작해 보세요.</span> 자매 브랜드인
+                                                <span>Petsies</span>에서
+                                                애완동물
+                                                인형뿐만 아니라 베게, 담요, 양말 등 여러상품을 제작합니다.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li id="etc" class="cardBenner_con">
+                                <div class="figure_box">
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img3-1.jpg" alt="베게 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">베게</h3>
+                                            <p class="abbreviation"><span>모든 상황에 맞는 맟춤형 베개는 어떻신가요?</span> 얼굴이 프린트 되어있는
+                                                버디베개
+                                                뿐만 아니라 만화베게, 사진베게도 제해
+                                                드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img3-2.jpg" alt="담요 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">담요</h3>
+                                            <p class="abbreviation"><span> 맞춤형 사진 담요로 아늑하고 특별한 하루를 보내세요!</span> 당신이 선택한
+                                                디자인과
+                                                사진으로 나만의 담요를 제작해
+                                                드립니다.
+                                                벨벳, 세르파, 직물의 3가지 소재중 하나를 선택할 수 있습니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img3-3.jpg" alt="열쇠고리 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">열쇠고리</h3>
+                                            <p class="abbreviation"><span>여러분의 사진이나 캐릭터가 그려진 열세고리는 어떠신가요?</span>양면에 좋아하는
+                                                사진이
+                                                인쇄되어 있으며, 풀리에스터 봉제와
+                                                하트
+                                                모양 홀더까지 드립니다.</p>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <div class="figcaption_img">
+                                            <a href="sub.html">
+                                                <img src="img/main/cardBenner/cardBenner_img3-4.jpg" alt="피규어 사진">
+                                            </a>
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="jua">보블헤드 및 피규어</h3>
+                                            <p class="abbreviation"><span>나만의 특별한 장식품을 원하시는 분께 추천!</span> 사진이나 일러스트 그림을
+                                                보내드리면 보블헤드 또는 피규어로 제작해
+                                                드립니다.
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="left cardBenner_button"></div>
+                    <div class="right cardBenner_button"></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+<!-- ======================================================= footerType-->
+    <footer id="footerType" class="footer_wrap notokr space">
+        <h2 class="blind">푸터영역</h2>
+
+        <div class="footer_inner container">
+
+            <h1 class="footer_logo"><a href="#"><img src="img/main/footer/footer_logo.svg" alt="푸터 로고"></a></h1>
+            <div class="footer_menu">
+                <dl>
+                    <dt>QULCK LINKS</dt>
+
+                    <dd><a href="sub.html">Budsies소개</a></dd>
+                    <dd><a href="sub.html">상품소개</a></dd>
+                    <dd><a href="sub.html">제작문의</a></dd>
+                    <dd><a href="sub.html">리뷰</a></dd>
+                    <dd><a href="sub.html">기타상품</a></dd>
+                    <dd><a href="sub.html">장바구니</a></dd>
+                    <dd><a href="sub.html">회원가입</a></dd>
+                </dl>
+                <ul>
+                    <li><a href="sub.html">회사소개</a></li>
+                    <li><a href="sub.html">이용약관</a></li>
+                    <li><a href="sub.html">개인정보취급방침</a></li>
+                    <li><a href="sub.html">문의하기</a></li>
+                </ul>
+                <div class="footer_box">
+                    <div class="footer_sns">
+                        <div class="footer_icon icon1"></div>
+                        <div class="footer_icon icon2"></div>
+                        <div class="footer_icon icon3"></div>
+                        <div class="footer_icon icon4"></div>
+                        <div class="footer_icon icon5"></div>
+                    </div>
+
+                    <select name="FamilySite" id="FamilySite">
+                        <option value="#" hidden>Family site</option>
+                        <option value="petsies">petsies</option>
+                        <option value="stuffedanimalpros">stuffedanimalpros</option>
+                        <option value="waggables">waggables</option>
+                    </select>
+                </div>
+            </div>
+
+            <p>©2024 BUDSIES PR LLC. 판권 소유.</p>
+        </div>
+        <div class="footerImg img1"></div>
+        <div class="footerImg img2"></div>
+        <div class="footerImg img3"></div>
+    </footer>
+<!-- ==============================================aside -->
+    <aside  class="aside_menu jua">
+        <h2 class="blind">어사이드 선택메뉴</h2>
+        <div class="anide_box">
+            <h3 class="anide_title">주문 바로가기</h3>
+            <select name="goods" id="goods" >
+                <option value="" hidden>상품 종류</option>
+                <option value="">봉제상품</option>
+                <option value="">의복</option>
+                <option value="">가정용품/액세서리</option>
+            </select>
+            <select name="details" id="details">
+                <option value="" hidden>상품 세부종류</option>
+                <option value="">그림인형</option>
+                <option value="">셀카인형</option>
+                <option value="">퍼펫인형</option>
+                <option value="">전문 커미션</option>
+                <option value="">애완동물</option>
+            </select>
+            <select name="gift_card" id="gift_card">
+                <option value="" hidden>기프트 카드</option>
+                <option value="">선택 없음</option>
+                <option value="">발렌타인 카드</option>
+                <option value="">겨울 카드</option>
+                <option value="">축제 카드</option>
+                <option value="">생일 카드</option>
+                <option value="">성탄절 카드</option>
+            </select>
+            <button>주문하기</button>
+        </div>
+    </aside>
+    
+<!-- =====================bg_dacoImg -->
+    <div class="bg_dacoImg">
+        <h2 class="blind">배경 일러스트 이미지</h2>
+        <div class="bg_img scissors"></div>
+        <div class="bg_img buttons"></div>
+        <div class="bg_img tapeline"></div>
+
+    </div>
+</body>
+</html>

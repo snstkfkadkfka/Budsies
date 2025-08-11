@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>푸터 영역</title>
+    <style>
+        /* =============================================fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+        .jua {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+        }
+
+        .notokr {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 400;
+        }
+
+        /* ==========================================reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            position: absolute;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        :root {
+            --gray666: #666;
+            --pink: #ED3095;
+            --orange: #FCB247;
+            --light_green: #A8D267;
+            --blue: #44C8F1;
+            --green: #1EAF63;
+            --purple: #BA80B8;
+            --yellow: #EEE34D;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 1160px;
+        }
+
+        .space {
+            padding: 100px 0;
+        }
+
+        /* ===============================================footerType */
+        .footer_wrap {
+            position: relative;
+
+        }
+
+        .footer_logo {
+            width: 169px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .footerImg {
+            background: url(img/footer_img.png)no-repeat;
+        }
+
+        .footerImg.img1 {
+            width: 100%;
+            height: 190px;
+            background-position: 0px -304px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .footerImg.img2 {
+            position: absolute;
+            width: 206px;
+            height: 304px;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .footerImg.img3 {
+            position: absolute;
+            width: 173px;
+            height: 256px;
+            right: 40px;
+            top: 50%;
+            background-position: -220px 0;
+            transform: translateY(-50%);
+        }
+
+        .footer_inner {
+            position: relative;
+            z-index: 999;
+        }
+
+        .footer_inner dl {
+            display: flex;
+            color: #666;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .footer_inner dl dt {
+            font-size: 20px;
+            font-weight: 700;
+            padding-right: 63px;
+        }
+
+        .footer_inner dl dd a {
+            font-size: 17px;
+            font-weight: normal;
+            color: #666;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .footer_inner dl dd::after {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 50%;
+            background-color: #666;
+        }
+
+        .footer_inner dl dd:first-child {
+            padding-left: 0;
+        }
+
+        .footer_inner dl dd:last-child {
+            padding-right: 0;
+        }
+
+        .footer_inner dl dd:last-child::after {
+            display: none;
+        }
+
+        .footer_inner ul {
+            display: flex;
+        }
+
+        .footer_inner ul {
+            margin-bottom: 50px;
+        }
+
+        .footer_inner ul li::after {
+            width: 1.5px;
+            height: 70%;
+            background: #666;
+            content: "";
+            display: inline-block;
+            margin-right: 56px;
+            margin-left: 56px;
+        }
+
+        .footer_inner ul li:last-child::after {
+            display: none;
+        }
+
+        .footer_inner ul li a {
+            font-size: 17px;
+            font-weight: 700;
+            color: #666;
+            text-align: center;
+            text-wrap: nowrap;
+        }
+
+        .footer_inner p {
+            color: #666;
+            font-size: 17px;
+            text-wrap: nowrap;
+        }
+
+        .footer_sns {
+            display: flex;
+            gap: 0 10px;
+            position: absolute;
+            right: 0;
+            bottom: 72px;
+        }
+
+        .footer_icon {
+            width: 28px;
+            height: 28px;
+            background-color: firebrick;
+            background: url(img/footer_Icon.svg);
+            cursor: pointer;
+        }
+
+        .footer_icon.icon2 {
+            background-position: -30px 0;
+        }
+
+        .footer_icon.icon3 {
+            background-position: -60px 0;
+        }
+
+        .footer_icon.icon4 {
+            background-position: -90px 0;
+        }
+
+        .footer_icon.icon5 {
+            background-position: -120px 0;
+        }
+
+        #FamilySite {
+            width: 180px;
+            height: 30px;
+            border: 1px solid #5E5E5E;
+            font-size: 16px;
+            color: #ACACAC;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            bottom: 22px;
+        }
+
+        @media (max-width : 1700px) {
+
+            .footerImg.img2 {
+                display: none;
+            }
+
+            .footerImg.img3 {
+                display: none;
+            }
+        }
+
+        @media (max-width : 1180px) {
+
+            .container {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .footer_sns {
+                right: 20px;
+            }
+
+            #FamilySite {
+                right: 20px;
+            }
+
+            .footer_inner dl dt {
+                padding-right: 4vw;
+            }
+
+            .footer_inner dl dd a {
+                padding-right: 1.5vw;
+                padding-left: 1.5vw;
+                text-wrap: nowrap;
+            }
+
+            .footer_inner ul li::after {
+                margin-right: 4.5vw;
+                margin-left: 4.5vw;
+            }
+        }
+
+        @media (max-width : 900px) {
+            
+            .space {
+                padding: 50px 0;
+            }
+
+            .footer_menu {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .footer_inner dt {
+                margin-bottom: 20px;
+                text-wrap: nowrap;
+            }
+
+            .footer_inner dl {
+                display: block;
+                margin-bottom: none;
+                text-align: left;
+            }
+
+            .footer_inner dl dd {
+                margin-bottom: 14px;
+            }
+
+            .footer_inner dl dd a {
+                padding-right: 0vw;
+                padding-left: 0vw;
+            }
+
+            .footer_inner dl dd::after {
+                display: none;
+            }
+
+            .footer_inner ul {
+                display: block;
+            }
+
+            .footer_inner ul {
+                margin-bottom: 50px;
+            }
+
+            .footer_inner ul li {
+                margin-bottom: 56px;
+ 
+            }
+
+            .footer_inner ul li::after {
+                display: none;
+            }
+
+          
+            .footer_sns {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            #FamilySite {
+                position: static;
+            }
+        }
+
+        @media (max-width:630px) {
+
+       .footer_box{position: absolute;bottom: 40px;right: 20px;}
+       .footer_inner dl {
+             margin-bottom: 100px;
+            }
+            
+        .footer_inner ul li {
+    
+            text-wrap: nowrap;
+        }
+
+        }
+
+                
+
+
+    </style>
+</head>
+
+<body>
+    <footer id="footerType" class="footer_wrap notokr space">
+        <h2 class="blind">푸터영역</h2>
+
+        <div class="footer_inner container">
+
+            <h1 class="footer_logo"><a href="#"><img src="img/footer_logo.svg" alt="푸터 로고"></a></h1>
+            <div class="footer_menu">
+                <dl>
+                    <dt>QULCK LINKS</dt>
+
+                    <dd><a href="#">Budsies소개</a></dd>
+                    <dd><a href="#">상품소개</a></dd>
+                    <dd><a href="#">제작문의</a></dd>
+                    <dd><a href="#">리뷰</a></dd>
+                    <dd><a href="#">기타상품</a></dd>
+                    <dd><a href="#">장바구니</a></dd>
+                    <dd><a href="#">회원가입</a></dd>
+                </dl>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+                <div class="footer_box">
+                    <div class="footer_sns">
+                        <div class="footer_icon icon1"></div>
+                        <div class="footer_icon icon2"></div>
+                        <div class="footer_icon icon3"></div>
+                        <div class="footer_icon icon4"></div>
+                        <div class="footer_icon icon5"></div>
+                    </div>
+
+                    <select name="FamilySite" id="FamilySite">
+                        <option value="#" hidden>Family site</option>
+                        <option value="petsies">petsies</option>
+                        <option value="stuffedanimalpros">stuffedanimalpros</option>
+                        <option value="waggables">waggables</option>
+                    </select>
+                </div>
+            </div>
+
+            <p>©2024 BUDSIES PR LLC. 판권 소유.</p>
+        </div>
+        <div class="footerImg img1"></div>
+        <div class="footerImg img2"></div>
+        <div class="footerImg img3"></div>
+    </footer>
+</body>
+
+</html>
