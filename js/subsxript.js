@@ -52,30 +52,26 @@ window.addEventListener('scroll', () => {
 
  // =======================================baenerTextType
 
- const baenertap = document.querySelectorAll(".baenerText_title ul li a");
- const baenerCont = document.querySelectorAll(".baenerText_cont")
+const baenertap = document.querySelectorAll(".baenerText_title ul li a");
+const baenerCont = document.querySelectorAll(".baenerText_cont")
 
- baenertap.forEach(tab => {
-     tab.addEventListener('click', (event) => {
-         event.preventDefault();
-         const contentId = tab.getAttribute('data-content');
-         baenerCont.forEach(item => {
-             item.style.display = 'none';
-         });
-         document.getElementById(contentId).style.display = 'block';
-         baenertap.forEach(t => {
-             t.classList.remove('on');
-         });
-         tab.classList.add('on');
-     });
- });
+baenertap.forEach(tab => {
+    tab.addEventListener('click', (event) => {
+        event.preventDefault();
+        const contentId = tab.getAttribute('data-content');
+        baenerCont.forEach(item => {
+            item.style.display = 'none';
+        });
+        document.getElementById(contentId).style.display = 'block';
+        baenertap.forEach(t => {
+            t.classList.remove('on');
+        });
+        tab.classList.add('on');
+    });
+});
 
 // --------------------------ScrollSmoother
 const lenis = new Lenis();
-
-lenis.on('scroll', (e) => {
-    console.log(e);
-})
 
 function raf(time) {
     lenis.raf(time)
